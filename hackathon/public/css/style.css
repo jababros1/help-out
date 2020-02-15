@@ -1,0 +1,46 @@
+.main_box{
+	text-align: center;
+}
+
+
+.front_img{
+
+	margin-top: 70px;
+	padding: 0px 20px 20px 20px;
+
+}
+
+.s1{
+	font-family: Indie Flower;
+	font-size: 50px;
+}
+.about_img{
+	margin-top: 10%;
+
+width: 100%;
+}
+
+.pin,.button,.image,.address,.relinp{
+text-align: center;
+margin:auto;
+margin-top: 10px;
+padding:20px ;
+}
+.inp{
+width: 80%;
+}
+.form{
+background-color: grey;
+}
+.rel{
+background-color: grey;
+}
+.rel h1{
+text-align: center;
+}
+.ejs h1{
+text-align: center;
+}
+.ejsimg{
+margin: auto;
+}

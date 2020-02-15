@@ -1,0 +1,45 @@
+<%- include("head"); -%>
+
+
+<img class="front_img" src="images/helplogo.jpg" alt="BUDDHA" width="100%" height="100%">
+
+<div class="main_box">
+  <h1 class="s1">Things get solved if you get involved.</h1>
+  <h2>here we help you to overcome the <br> problems of your area yourself</h2>
+</div>
+<div class="form">
+  <form action="/" method="post" enctype="multipart/form-data">
+    <div class="image">
+      <h2>share the image</h2>
+      <input class="inp" type="file" name="photo" placeholder="share the image">
+    </div>
+    <div class="address">
+      <input class="inp" type="text" name="address" placeholder="adress of the image">
+    </div>
+    <div class="pin">
+      <input class="inp" type="text" name="pin" placeholder="enter the pin code of your area">
+    </div>
+    <div class="button">
+      <button type="submit" class="btn">upload</button>
+    </div>
+
+  </form>
+</div>
+
+<div class="rel">
+  <h1>find the place which require your need</h1>
+  <form action="/related" method="post">
+    <div class="relinp">
+      <input class="inp" type="text" name="pin" placeholder="enter your area pincode">
+    </div>
+
+
+    <div class="button">
+      <button type="submit" class="btn">search</button>
+    </div>
+  </form>
+
+</div>
+
+
+<%- include("foot"); -%>

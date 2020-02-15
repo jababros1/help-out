@@ -1,0 +1,20 @@
+<%- include("head"); -%>
+
+
+<img class="front_img" src="images/helplogo2.png" alt="BUDDHA" width="100%" height="100%">
+
+<div class="main_box">
+  <h1 class="s1">Things get solved if you get involved.</h1>
+  <h2>here we help you to overcome the <br> problems of your area yourself</h2>
+</div>
+<div class="ejs">
+<h1>these places near you require your volunteering</h1>
+  <%adress.forEach(function(item){%>
+  <%if (item.pin === pin) {%>
+  <img src="upload/<%=item.filename%>" alt="">
+  <% }})%>
+
+</div>
+
+
+<%- include("foot"); -%>
