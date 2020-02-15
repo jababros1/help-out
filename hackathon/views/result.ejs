@@ -8,11 +8,19 @@
   <h2>here we help you to overcome the <br> problems of your area yourself</h2>
 </div>
 <div class="ejs">
-<h1>these places near you require your volunteering</h1>
-  <%adress.forEach(function(item){%>
-  <%if (item.pin === pin) {%>
-  <img src="upload/<%=item.filename%>" alt="">
-  <% }})%>
+  <h1>these places near you require your volunteering</h1>
+    <%adress.forEach(function(item){%>
+    <%if (item.pin === pin) {%>
+      <div class="result_box">
+        <img class="ejs_img" src="upload/<%=item.filename%>" >
+
+          <div>
+            <h1>adress:<%=item.adress%></h1>
+          
+          </div>
+        <% }})%>
+      </div>
+
 
 </div>
 

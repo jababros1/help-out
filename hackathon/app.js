@@ -38,7 +38,8 @@ mongoose.connect("mongodb://localhost:27017/helpDB", {
 //mongoose schema...................................................
 const formSchema = new mongoose.Schema({
   pin: String,
-  filename: String
+  filename: String,
+  adress: String
 });
 //mongoose model....................................................
 const data = new mongoose.model("image", formSchema);
@@ -51,10 +52,11 @@ app.get("/", function(req, res) {
 
 app.post('/', multer(multerconf).single("photo"), function(req, res, next) {
   console.log(req.file.filename)
-  const uname = req.file.filename;
+  const filename = req.file.filename;
   const value = new data({
     pin: req.body.pin,
-    filename: uname
+    filename: filename,
+    adress: req.body.address
   });
   value.save();
 
@@ -72,27 +74,30 @@ app.get("/related", function(req, res) {
 app.post("/related", function(req, res) {
   const pin = req.body.pin;
   data.find({}, function(err, results) {
-
     for (var i = 0; i < results.length; i++) {
-
-
       if (results[i].pin === pin) {
-console.log(results[i].filename)
+        console.log(results[i].filename)
         res.render("result", {
-          pin:pin,
-          adress:results
+          pin: pin,
+          adress: results
         })
       }
-
     }
     console.log(results);
-
   });
-
 });
 
-
-
+//deletion route of the completed work
+app.post("/delete", function(req, res) {
+  const ID = req.body.checkbox
+  item.findByIdAndRemove(ID, function(err) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.redirect("/")
+    }
+  })
+});
 
 //end................................................................
 app.listen(3000, function() {
